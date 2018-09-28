@@ -29,6 +29,7 @@ namespace SimpleCs
             ShowMessageButton.Width = 200;
             ShowMessageButton.Text = "Show Message";
             this.Controls.Add(ShowMessageButton);
+            ShowMessageButton.Click += ClickHandler;
 
             MessageLabel = new Label();
             MessageLabel.Left = 25;
@@ -39,5 +40,10 @@ namespace SimpleCs
                                                          
         }
 
+        private void ClickHandler(object sender, EventArgs e)
+        {
+            MessageLabel.Text = MessageTextBox.Text;
+            MessageBox.Show("Button clicked");
+        }
     }
 }
