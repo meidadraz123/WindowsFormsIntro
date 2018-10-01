@@ -18,33 +18,32 @@ namespace Data
         }
 
         private ObjectSource source = new ObjectSource();
+        private BindingSource categoryBindingSource = new BindingSource();
+        private BindingSource productsBindingSource = new BindingSource();
 
         private void DataForm_Load(object sender, EventArgs e)
         {
             categoryToolStripComboBox.ComboBox.DisplayMember = "CategoryName";
             categoryToolStripComboBox.ComboBox.ValueMember = "CategoryID";
             categoryToolStripComboBox.ComboBox.DataSource = source.GetCategories();
+
+            categoryBindingSource.DataSource = source.GetCategories();
+
+            productsListBox.DataSource = productsBindingSource;
+            productsListBox.DisplayMember = "ProductName";
+
+            nameTextBox.DataBindings.Add("Text", productsBindingSource, "ProductName");
+            quantityPerUnitTextBox.DataBindings.Add("Text", productsBindingSource, "QuantityPerUnit");
+            priceTextBox.DataBindings.Add("Text", productsBindingSource, "UnitPrice");
+            stockTextBox.DataBindings.Add("Text", productsBindingSource, "UnitsInStock");
+            orderTextBox.DataBindings.Add("Text", productsBindingSource, "UnitsOnOrder");
+            discontinuedCheckBox.DataBindings.Add("Checked", productsBindingSource, "Discontinued");
         }
 
         private void categoryToolStripComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             var catId = Convert.ToInt32(categoryToolStripComboBox.ComboBox.SelectedValue);
-            var products = source.GetProducts(catId);
-            productsListBox.DataSource = products;
-            productsListBox.DisplayMember = "ProductName";
-
-            nameTextBox.DataBindings.Clear();
-            nameTextBox.DataBindings.Add("Text", products, "ProductName");
-            quantityPerUnitTextBox.DataBindings.Clear();
-            quantityPerUnitTextBox.DataBindings.Add("Text", products, "QuantityPerUnit");
-            priceTextBox.DataBindings.Clear();
-            priceTextBox.DataBindings.Add("Text", products, "UnitPrice");
-            stockTextBox.DataBindings.Clear();
-            stockTextBox.DataBindings.Add("Text", products, "UnitsInStock");
-            orderTextBox.DataBindings.Clear();
-            orderTextBox.DataBindings.Add("Text", products, "UnitsOnOrder");
-            discontinuedCheckBox.DataBindings.Clear();
-            discontinuedCheckBox.DataBindings.Add("Checked", products, "Discontinued");
+            productsBindingSource.DataSource = source.GetProducts(catId);
         }
 
         private void AddToolStripButton_Click(object sender, EventArgs e)
@@ -53,13 +52,25 @@ namespace Data
             var result = form.ShowDialog();
             if (result == DialogResult.OK)
             {
-                source.AddProduct(form.Product);
+                //source.AddProduct(form.Product);
+                productsBindingSource.Add(form.Product);
             }
         }
 
         private void DeleteToolStripButton_Click(object sender, EventArgs e)
         {
-            source.DeleteProduct((Product)productsListBox.SelectedItem);
+            //source.DeleteProduct((Product)productsListBox.SelectedItem);
+            productsBindingSource.Remove(productsListBox.SelectedItem);
+        }
+
+        private void BackToolStripButton_Click(object sender, EventArgs e)
+        {
+            productsBindingSource.MovePrevious();
+        }
+
+        private void ForwardToolStripButton_Click(object sender, EventArgs e)
+        {
+            productsBindingSource.MoveNext();
         }
     }
 }

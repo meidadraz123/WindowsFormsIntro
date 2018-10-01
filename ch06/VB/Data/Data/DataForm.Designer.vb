@@ -46,8 +46,8 @@ Partial Class DataForm
         Me.DiscontinuedLabel = New System.Windows.Forms.Label()
         Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
         Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator()
-        Me.ToolStripButton1 = New System.Windows.Forms.ToolStripButton()
-        Me.ToolStripButton2 = New System.Windows.Forms.ToolStripButton()
+        Me.BackToolStripButton = New System.Windows.Forms.ToolStripButton()
+        Me.ForwardToolStripButton = New System.Windows.Forms.ToolStripButton()
         Me.AddToolStripButton = New System.Windows.Forms.ToolStripButton()
         Me.DeleteToolStripButton = New System.Windows.Forms.ToolStripButton()
         Me.SaveToolStripButton = New System.Windows.Forms.ToolStripButton()
@@ -60,7 +60,7 @@ Partial Class DataForm
         '
         'ToolStrip1
         '
-        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CategoryToolStripLabel, Me.CategoryToolStripComboBox, Me.SourceToolStripLabel, Me.SourceToolStripComboBox, Me.ToolStripButton1, Me.ToolStripButton2, Me.ToolStripSeparator1, Me.AddToolStripButton, Me.DeleteToolStripButton, Me.ToolStripSeparator2, Me.SaveToolStripButton})
+        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CategoryToolStripLabel, Me.CategoryToolStripComboBox, Me.SourceToolStripLabel, Me.SourceToolStripComboBox, Me.BackToolStripButton, Me.ForwardToolStripButton, Me.ToolStripSeparator1, Me.AddToolStripButton, Me.DeleteToolStripButton, Me.ToolStripSeparator2, Me.SaveToolStripButton})
         Me.ToolStrip1.Location = New System.Drawing.Point(0, 0)
         Me.ToolStrip1.Name = "ToolStrip1"
         Me.ToolStrip1.Size = New System.Drawing.Size(957, 25)
@@ -264,21 +264,21 @@ Partial Class DataForm
         '
         'ToolStripButton1
         '
-        Me.ToolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.ToolStripButton1.Image = Global.Data.My.Resources.Resources.Backward_16x
-        Me.ToolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.ToolStripButton1.Name = "ToolStripButton1"
-        Me.ToolStripButton1.Size = New System.Drawing.Size(23, 22)
-        Me.ToolStripButton1.Text = "ToolStripButton1"
+        Me.BackToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.BackToolStripButton.Image = Global.Data.My.Resources.Resources.Backward_16x
+        Me.BackToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.BackToolStripButton.Name = "ToolStripButton1"
+        Me.BackToolStripButton.Size = New System.Drawing.Size(23, 22)
+        Me.BackToolStripButton.Text = "ToolStripButton1"
         '
         'ToolStripButton2
         '
-        Me.ToolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.ToolStripButton2.Image = Global.Data.My.Resources.Resources.Forward_16x
-        Me.ToolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.ToolStripButton2.Name = "ToolStripButton2"
-        Me.ToolStripButton2.Size = New System.Drawing.Size(23, 22)
-        Me.ToolStripButton2.Text = "ToolStripButton2"
+        Me.ForwardToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.ForwardToolStripButton.Image = Global.Data.My.Resources.Resources.Forward_16x
+        Me.ForwardToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.ForwardToolStripButton.Name = "ToolStripButton2"
+        Me.ForwardToolStripButton.Size = New System.Drawing.Size(23, 22)
+        Me.ForwardToolStripButton.Text = "ToolStripButton2"
         '
         'AddToolStripButton
         '
@@ -350,8 +350,8 @@ Partial Class DataForm
     Friend WithEvents DiscontinuedCheckBox As CheckBox
     Friend WithEvents UnitsOnOrderTextBox As TextBox
     Friend WithEvents QuantityPerUnitTextBox As TextBox
-    Friend WithEvents ToolStripButton1 As ToolStripButton
-    Friend WithEvents ToolStripButton2 As ToolStripButton
+    Friend WithEvents BackToolStripButton As ToolStripButton
+    Friend WithEvents ForwardToolStripButton As ToolStripButton
     Friend WithEvents ToolStripSeparator1 As ToolStripSeparator
     Friend WithEvents AddToolStripButton As ToolStripButton
     Friend WithEvents DeleteToolStripButton As ToolStripButton

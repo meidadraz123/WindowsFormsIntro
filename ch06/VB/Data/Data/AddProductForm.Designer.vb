@@ -46,7 +46,7 @@ Partial Class AddProductForm
         Me.DiscontinuedLabel.Location = New System.Drawing.Point(16, 170)
         Me.DiscontinuedLabel.Name = "DiscontinuedLabel"
         Me.DiscontinuedLabel.Size = New System.Drawing.Size(69, 13)
-        Me.DiscontinuedLabel.TabIndex = 25
+        Me.DiscontinuedLabel.TabIndex = 12
         Me.DiscontinuedLabel.Text = "Discontinued"
         '
         'UnitsOnOrderLabel
@@ -55,7 +55,7 @@ Partial Class AddProductForm
         Me.UnitsOnOrderLabel.Location = New System.Drawing.Point(16, 145)
         Me.UnitsOnOrderLabel.Name = "UnitsOnOrderLabel"
         Me.UnitsOnOrderLabel.Size = New System.Drawing.Size(77, 13)
-        Me.UnitsOnOrderLabel.TabIndex = 24
+        Me.UnitsOnOrderLabel.TabIndex = 10
         Me.UnitsOnOrderLabel.Text = "Units On Order"
         '
         'UnitsInStockLabel
@@ -64,7 +64,7 @@ Partial Class AddProductForm
         Me.UnitsInStockLabel.Location = New System.Drawing.Point(16, 119)
         Me.UnitsInStockLabel.Name = "UnitsInStockLabel"
         Me.UnitsInStockLabel.Size = New System.Drawing.Size(74, 13)
-        Me.UnitsInStockLabel.TabIndex = 23
+        Me.UnitsInStockLabel.TabIndex = 8
         Me.UnitsInStockLabel.Text = "Units In Stock"
         '
         'UnitPriceLabel
@@ -73,7 +73,7 @@ Partial Class AddProductForm
         Me.UnitPriceLabel.Location = New System.Drawing.Point(16, 93)
         Me.UnitPriceLabel.Name = "UnitPriceLabel"
         Me.UnitPriceLabel.Size = New System.Drawing.Size(53, 13)
-        Me.UnitPriceLabel.TabIndex = 22
+        Me.UnitPriceLabel.TabIndex = 6
         Me.UnitPriceLabel.Text = "Unit Price"
         '
         'QuantityPerUnitLabel
@@ -82,7 +82,7 @@ Partial Class AddProductForm
         Me.QuantityPerUnitLabel.Location = New System.Drawing.Point(16, 67)
         Me.QuantityPerUnitLabel.Name = "QuantityPerUnitLabel"
         Me.QuantityPerUnitLabel.Size = New System.Drawing.Size(87, 13)
-        Me.QuantityPerUnitLabel.TabIndex = 21
+        Me.QuantityPerUnitLabel.TabIndex = 4
         Me.QuantityPerUnitLabel.Text = "Quantity Per Unit"
         '
         'NameLabel
@@ -91,7 +91,7 @@ Partial Class AddProductForm
         Me.NameLabel.Location = New System.Drawing.Point(16, 15)
         Me.NameLabel.Name = "NameLabel"
         Me.NameLabel.Size = New System.Drawing.Size(35, 13)
-        Me.NameLabel.TabIndex = 20
+        Me.NameLabel.TabIndex = 0
         Me.NameLabel.Text = "Name"
         '
         'DiscontinuedCheckBox
@@ -100,7 +100,7 @@ Partial Class AddProductForm
         Me.DiscontinuedCheckBox.Location = New System.Drawing.Point(114, 169)
         Me.DiscontinuedCheckBox.Name = "DiscontinuedCheckBox"
         Me.DiscontinuedCheckBox.Size = New System.Drawing.Size(15, 14)
-        Me.DiscontinuedCheckBox.TabIndex = 19
+        Me.DiscontinuedCheckBox.TabIndex = 13
         Me.DiscontinuedCheckBox.UseVisualStyleBackColor = True
         '
         'UnitsOnOrderTextBox
@@ -108,35 +108,35 @@ Partial Class AddProductForm
         Me.UnitsOnOrderTextBox.Location = New System.Drawing.Point(114, 142)
         Me.UnitsOnOrderTextBox.Name = "UnitsOnOrderTextBox"
         Me.UnitsOnOrderTextBox.Size = New System.Drawing.Size(230, 20)
-        Me.UnitsOnOrderTextBox.TabIndex = 18
+        Me.UnitsOnOrderTextBox.TabIndex = 11
         '
         'QuantityPerUnitTextBox
         '
         Me.QuantityPerUnitTextBox.Location = New System.Drawing.Point(114, 64)
         Me.QuantityPerUnitTextBox.Name = "QuantityPerUnitTextBox"
         Me.QuantityPerUnitTextBox.Size = New System.Drawing.Size(230, 20)
-        Me.QuantityPerUnitTextBox.TabIndex = 17
+        Me.QuantityPerUnitTextBox.TabIndex = 5
         '
         'StockTextBox
         '
         Me.StockTextBox.Location = New System.Drawing.Point(114, 116)
         Me.StockTextBox.Name = "StockTextBox"
         Me.StockTextBox.Size = New System.Drawing.Size(230, 20)
-        Me.StockTextBox.TabIndex = 16
+        Me.StockTextBox.TabIndex = 9
         '
         'PriceTextBox
         '
         Me.PriceTextBox.Location = New System.Drawing.Point(114, 90)
         Me.PriceTextBox.Name = "PriceTextBox"
         Me.PriceTextBox.Size = New System.Drawing.Size(230, 20)
-        Me.PriceTextBox.TabIndex = 15
+        Me.PriceTextBox.TabIndex = 7
         '
         'NameTextBox
         '
         Me.NameTextBox.Location = New System.Drawing.Point(114, 12)
         Me.NameTextBox.Name = "NameTextBox"
         Me.NameTextBox.Size = New System.Drawing.Size(230, 20)
-        Me.NameTextBox.TabIndex = 14
+        Me.NameTextBox.TabIndex = 1
         '
         'CategoryLabel
         '
@@ -144,7 +144,7 @@ Partial Class AddProductForm
         Me.CategoryLabel.Location = New System.Drawing.Point(16, 41)
         Me.CategoryLabel.Name = "CategoryLabel"
         Me.CategoryLabel.Size = New System.Drawing.Size(49, 13)
-        Me.CategoryLabel.TabIndex = 27
+        Me.CategoryLabel.TabIndex = 2
         Me.CategoryLabel.Text = "Category"
         '
         'CategoryTextBox
@@ -153,7 +153,8 @@ Partial Class AddProductForm
         Me.CategoryTextBox.Location = New System.Drawing.Point(114, 38)
         Me.CategoryTextBox.Name = "CategoryTextBox"
         Me.CategoryTextBox.Size = New System.Drawing.Size(230, 20)
-        Me.CategoryTextBox.TabIndex = 26
+        Me.CategoryTextBox.TabIndex = 3
+        Me.CategoryTextBox.TabStop = False
         '
         'CancelButton
         '
@@ -161,7 +162,7 @@ Partial Class AddProductForm
         Me.CancelButton.Location = New System.Drawing.Point(269, 218)
         Me.CancelButton.Name = "CancelButton"
         Me.CancelButton.Size = New System.Drawing.Size(75, 23)
-        Me.CancelButton.TabIndex = 28
+        Me.CancelButton.TabIndex = 15
         Me.CancelButton.Text = "Cancel"
         Me.CancelButton.UseVisualStyleBackColor = True
         '
@@ -171,7 +172,7 @@ Partial Class AddProductForm
         Me.OkButton.Location = New System.Drawing.Point(188, 218)
         Me.OkButton.Name = "OkButton"
         Me.OkButton.Size = New System.Drawing.Size(75, 23)
-        Me.OkButton.TabIndex = 29
+        Me.OkButton.TabIndex = 14
         Me.OkButton.Text = "Ok"
         Me.OkButton.UseVisualStyleBackColor = True
         '

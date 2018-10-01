@@ -50,12 +50,12 @@
             this.categoryToolStripComboBox = new System.Windows.Forms.ToolStripComboBox();
             this.SourceToolStripLabel = new System.Windows.Forms.ToolStripLabel();
             this.sourceToolStripComboBox = new System.Windows.Forms.ToolStripComboBox();
+            this.BackToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.ForwardToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.ToolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.ToolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.ToolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.ToolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.AddToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.DeleteToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.ToolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.SaveToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -68,7 +68,7 @@
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Location = new System.Drawing.Point(0, 30);
+            this.tabControl1.Location = new System.Drawing.Point(0, 27);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(877, 614);
@@ -231,8 +231,8 @@
             this.categoryToolStripComboBox,
             this.SourceToolStripLabel,
             this.sourceToolStripComboBox,
-            this.ToolStripButton1,
-            this.ToolStripButton2,
+            this.BackToolStripButton,
+            this.ForwardToolStripButton,
             this.ToolStripSeparator1,
             this.AddToolStripButton,
             this.DeleteToolStripButton,
@@ -269,33 +269,30 @@
             this.sourceToolStripComboBox.Name = "sourceToolStripComboBox";
             this.sourceToolStripComboBox.Size = new System.Drawing.Size(150, 25);
             // 
+            // BackToolStripButton
+            // 
+            this.BackToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.BackToolStripButton.Image = global::Data.Properties.Resources.Backward_16x;
+            this.BackToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.BackToolStripButton.Name = "BackToolStripButton";
+            this.BackToolStripButton.Size = new System.Drawing.Size(23, 22);
+            this.BackToolStripButton.Text = "ToolStripButton1";
+            this.BackToolStripButton.Click += new System.EventHandler(this.BackToolStripButton_Click);
+            // 
+            // ForwardToolStripButton
+            // 
+            this.ForwardToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.ForwardToolStripButton.Image = global::Data.Properties.Resources.Forward_16x;
+            this.ForwardToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.ForwardToolStripButton.Name = "ForwardToolStripButton";
+            this.ForwardToolStripButton.Size = new System.Drawing.Size(23, 22);
+            this.ForwardToolStripButton.Text = "ToolStripButton2";
+            this.ForwardToolStripButton.Click += new System.EventHandler(this.ForwardToolStripButton_Click);
+            // 
             // ToolStripSeparator1
             // 
             this.ToolStripSeparator1.Name = "ToolStripSeparator1";
             this.ToolStripSeparator1.Size = new System.Drawing.Size(6, 25);
-            // 
-            // ToolStripSeparator2
-            // 
-            this.ToolStripSeparator2.Name = "ToolStripSeparator2";
-            this.ToolStripSeparator2.Size = new System.Drawing.Size(6, 25);
-            // 
-            // ToolStripButton1
-            // 
-            this.ToolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.ToolStripButton1.Image = global::Data.Properties.Resources.Backward_16x;
-            this.ToolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.ToolStripButton1.Name = "ToolStripButton1";
-            this.ToolStripButton1.Size = new System.Drawing.Size(23, 22);
-            this.ToolStripButton1.Text = "ToolStripButton1";
-            // 
-            // ToolStripButton2
-            // 
-            this.ToolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.ToolStripButton2.Image = global::Data.Properties.Resources.Forward_16x;
-            this.ToolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.ToolStripButton2.Name = "ToolStripButton2";
-            this.ToolStripButton2.Size = new System.Drawing.Size(23, 22);
-            this.ToolStripButton2.Text = "ToolStripButton2";
             // 
             // AddToolStripButton
             // 
@@ -316,6 +313,11 @@
             this.DeleteToolStripButton.Size = new System.Drawing.Size(23, 22);
             this.DeleteToolStripButton.Text = "ToolStripButton4";
             this.DeleteToolStripButton.Click += new System.EventHandler(this.DeleteToolStripButton_Click);
+            // 
+            // ToolStripSeparator2
+            // 
+            this.ToolStripSeparator2.Name = "ToolStripSeparator2";
+            this.ToolStripSeparator2.Size = new System.Drawing.Size(6, 25);
             // 
             // SaveToolStripButton
             // 
@@ -371,8 +373,8 @@
         internal System.Windows.Forms.ToolStripComboBox categoryToolStripComboBox;
         internal System.Windows.Forms.ToolStripLabel SourceToolStripLabel;
         internal System.Windows.Forms.ToolStripComboBox sourceToolStripComboBox;
-        internal System.Windows.Forms.ToolStripButton ToolStripButton1;
-        internal System.Windows.Forms.ToolStripButton ToolStripButton2;
+        internal System.Windows.Forms.ToolStripButton BackToolStripButton;
+        internal System.Windows.Forms.ToolStripButton ForwardToolStripButton;
         internal System.Windows.Forms.ToolStripSeparator ToolStripSeparator1;
         internal System.Windows.Forms.ToolStripButton AddToolStripButton;
         internal System.Windows.Forms.ToolStripButton DeleteToolStripButton;
