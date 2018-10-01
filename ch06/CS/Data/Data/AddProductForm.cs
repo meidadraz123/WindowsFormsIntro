@@ -22,8 +22,6 @@ namespace Data
             categoryTextBox.Text = category.CategoryName;
         }
 
-        private Product product;
-
         public Product Product
         {
             get
@@ -34,7 +32,7 @@ namespace Data
                     quantityPerUnitTextBox.Text,
                     Convert.ToDecimal(priceTextBox.Text),
                     Convert.ToInt32(stockTextBox.Text),
-                     Convert.ToInt32(unitsOnOrderTextBox.Text),
+                    Convert.ToInt32(unitsOnOrderTextBox.Text),
                     discontinuedCheckBox.Checked);
                 return result;
             }
