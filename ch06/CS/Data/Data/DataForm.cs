@@ -32,6 +32,8 @@ namespace Data
             productsListBox.DataSource = productsBindingSource;
             productsListBox.DisplayMember = "ProductName";
 
+            productDataGridView.DataSource = productsBindingSource;
+
             nameTextBox.DataBindings.Add("Text", productsBindingSource, "ProductName");
             quantityPerUnitTextBox.DataBindings.Add("Text", productsBindingSource, "QuantityPerUnit");
             priceTextBox.DataBindings.Add("Text", productsBindingSource, "UnitPrice");

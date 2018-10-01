@@ -68,10 +68,11 @@
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Location = new System.Drawing.Point(0, 27);
+            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControl1.Location = new System.Drawing.Point(0, 25);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(877, 614);
+            this.tabControl1.Size = new System.Drawing.Size(877, 619);
             this.tabControl1.TabIndex = 1;
             // 
             // tabPage1
@@ -92,7 +93,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(869, 588);
+            this.tabPage1.Size = new System.Drawing.Size(869, 593);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Form";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -333,8 +334,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(877, 644);
-            this.Controls.Add(this.ToolStrip1);
             this.Controls.Add(this.tabControl1);
+            this.Controls.Add(this.ToolStrip1);
             this.Name = "DataForm";
             this.Text = "Data Binding";
             this.Load += new System.EventHandler(this.DataForm_Load);
