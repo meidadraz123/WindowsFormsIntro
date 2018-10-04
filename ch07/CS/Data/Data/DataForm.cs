@@ -19,6 +19,7 @@ namespace Data
 
         private ISource currentSource;
         private ObjectSource objectSource;
+        private DataSetSource dataSetSource;
         private BindingSource categoriesBindingSource = new BindingSource();
         private BindingSource productsBindingSource = new BindingSource();
 
@@ -72,6 +73,13 @@ namespace Data
                         objectSource = new ObjectSource();
                     }
                     currentSource = objectSource;
+                    break;
+                case 1:
+                    if (dataSetSource == null)
+                    {
+                        dataSetSource = new DataSetSource();
+                    }
+                    currentSource = dataSetSource;
                     break;
                 default:
                     break;

@@ -59,6 +59,7 @@
     <Compile Include="DataForm.Designer.cs">
       <DependentUpon>DataForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="DataSetSource.cs" />
     <Compile Include="ISource.cs" />
     <Compile Include="ObjectSource.cs" />
     <Compile Include="Product.cs" />

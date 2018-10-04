@@ -4,6 +4,7 @@
 
     Private _currentSource As ISource
     Private _objectSource As ObjectSource
+    Private _dataSetSource As DataSetSource
 
     Private Sub DataForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         SourceToolStripComboBox.SelectedIndex = 0
@@ -77,6 +78,11 @@
                     _objectSource = New ObjectSource()
                 End If
                 _currentSource = _objectSource
+            Case 1
+                If _dataSetSource Is Nothing Then
+                    _dataSetSource = New DataSetSource()
+                End If
+                _currentSource = _dataSetSource
         End Select
     End Sub
 End Class

@@ -268,7 +268,8 @@
             // 
             this.sourceToolStripComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.sourceToolStripComboBox.Items.AddRange(new object[] {
-            "Data Object"});
+            "Object",
+            "DataSet"});
             this.sourceToolStripComboBox.Name = "sourceToolStripComboBox";
             this.sourceToolStripComboBox.Size = new System.Drawing.Size(150, 25);
             this.sourceToolStripComboBox.SelectedIndexChanged += new System.EventHandler(this.sourceToolStripComboBox_SelectedIndexChanged);

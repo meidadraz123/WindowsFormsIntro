@@ -88,7 +88,7 @@ Partial Class DataForm
         'SourceToolStripComboBox
         '
         Me.SourceToolStripComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.SourceToolStripComboBox.Items.AddRange(New Object() {"Objects"})
+        Me.SourceToolStripComboBox.Items.AddRange(New Object() {"Objects", "DataSet"})
         Me.SourceToolStripComboBox.Name = "SourceToolStripComboBox"
         Me.SourceToolStripComboBox.Size = New System.Drawing.Size(150, 25)
         '
