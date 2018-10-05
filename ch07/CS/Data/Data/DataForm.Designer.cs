@@ -332,6 +332,7 @@
             this.SaveToolStripButton.Name = "SaveToolStripButton";
             this.SaveToolStripButton.Size = new System.Drawing.Size(23, 22);
             this.SaveToolStripButton.Text = "ToolStripButton5";
+            this.SaveToolStripButton.Click += new System.EventHandler(this.SaveToolStripButton_Click);
             // 
             // DataForm
             // 

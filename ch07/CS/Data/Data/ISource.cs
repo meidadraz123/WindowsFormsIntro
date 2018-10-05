@@ -11,7 +11,7 @@ namespace Data
     {
         object GetCategories();
         object GetProducts(int catId);
-        void DeleteProduct(BindingSource bindingSource, Product product);
+        void DeleteProduct(BindingSource bindingSource, int productId);
         void AddProduct(BindingSource bindingSource, Product product);
         void Save();
     }

@@ -108,11 +108,19 @@ Public Class ObjectSource
         Return result.ToList()
     End Function
 
-    Public Sub DeleteProduct(bindingSource As BindingSource, product As Product) Implements ISource.DeleteProduct
+    Public Sub DeleteProduct(bindingSource As BindingSource, productId As Integer) Implements ISource.DeleteProduct
+        Dim query = From p In _products
+                    Where p.ProductID = productId
+                    Select p
+
+        Dim product = query.Single()
         bindingSource.Remove(product)
     End Sub
 
     Public Sub AddProduct(bindingSource As BindingSource, product As Product) Implements ISource.AddProduct
+        Dim maxId = Aggregate p In _products
+                    Into Max(p.ProductID)
+        product.ProductID = maxId + 1
         bindingSource.Add(product)
     End Sub
 

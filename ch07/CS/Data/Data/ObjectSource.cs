@@ -118,13 +118,21 @@ namespace Data
             return result.ToList();
         }
 
-        public void DeleteProduct(BindingSource bindingSource, Product product)
+        public void DeleteProduct(BindingSource bindingSource, int productId)
         {
+            var query = from p in _products
+                        where p.ProductID == productId
+                        select p;
+
+            var product = query.Single();
             bindingSource.Remove(product);
         }
 
         public void AddProduct(BindingSource bindingSource, Product product)
         {
+            var maxId = _products.Max( p => p.ProductID);
+            product.ProductID = maxId + 1;
+
             bindingSource.Add(product);
         }
 

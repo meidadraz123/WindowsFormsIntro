@@ -25,26 +25,35 @@ namespace Data
 
         private void DataForm_Load(object sender, EventArgs e)
         {
-            sourceToolStripComboBox.ComboBox.SelectedIndex = 0;
-            SetSource();
-            BindCategories();
+            try
+            {
+                sourceToolStripComboBox.ComboBox.SelectedIndex = 0;
+                SetSource();
+                BindCategories();
 
-            categoriesBindingSource.DataSource = currentSource.GetCategories();
+                categoriesBindingSource.DataSource = currentSource.GetCategories();
 
-            categoryToolStripComboBox.ComboBox.DisplayMember = "CategoryName";
-            categoryToolStripComboBox.ComboBox.ValueMember = "CategoryID";
-            categoryToolStripComboBox.ComboBox.DataSource = categoriesBindingSource;
+                categoryToolStripComboBox.ComboBox.DisplayMember = "CategoryName";
+                categoryToolStripComboBox.ComboBox.ValueMember = "CategoryID";
+                categoryToolStripComboBox.ComboBox.DataSource = categoriesBindingSource;
 
-            productDataGridView.DataSource = productsBindingSource;
-            productsListBox.DataSource = productsBindingSource;
-            productsListBox.DisplayMember = "ProductName";
+                productsListBox.DisplayMember = "ProductName";
+                productsListBox.ValueMember = "ProductID";
+                productsListBox.DataSource = productsBindingSource;
+                productDataGridView.DataSource = productsBindingSource;
 
-            nameTextBox.DataBindings.Add("Text", productsBindingSource, "ProductName");
-            quantityPerUnitTextBox.DataBindings.Add("Text", productsBindingSource, "QuantityPerUnit");
-            priceTextBox.DataBindings.Add("Text", productsBindingSource, "UnitPrice");
-            stockTextBox.DataBindings.Add("Text", productsBindingSource, "UnitsInStock");
-            orderTextBox.DataBindings.Add("Text", productsBindingSource, "UnitsOnOrder");
-            discontinuedCheckBox.DataBindings.Add("Checked", productsBindingSource, "Discontinued");
+                nameTextBox.DataBindings.Add("Text", productsBindingSource, "ProductName");
+                quantityPerUnitTextBox.DataBindings.Add("Text", productsBindingSource, "QuantityPerUnit");
+                priceTextBox.DataBindings.Add("Text", productsBindingSource, "UnitPrice");
+                stockTextBox.DataBindings.Add("Text", productsBindingSource, "UnitsInStock");
+                orderTextBox.DataBindings.Add("Text", productsBindingSource, "UnitsOnOrder");
+                discontinuedCheckBox.DataBindings.Add("Checked", productsBindingSource, "Discontinued");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, this.Text);
+                throw;
+            }
         }
 
         private void categoryToolStripComboBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -88,17 +97,23 @@ namespace Data
 
         private void AddToolStripButton_Click(object sender, EventArgs e)
         {
-            var form = new AddProductForm((Category)categoryToolStripComboBox.ComboBox.SelectedItem);
+            var id = Convert.ToInt32(categoryToolStripComboBox.ComboBox.SelectedValue);
+            var name = categoryToolStripComboBox.ComboBox.Text;
+            var category = new Category(id, name);
+            var form = new AddProductForm(category);
             var result = form.ShowDialog();
             if (result == DialogResult.OK)
             {
-                productsBindingSource.Add(form.Product);
+                currentSource.AddProduct(productsBindingSource, form.Product);
             }
         }
 
         private void DeleteToolStripButton_Click(object sender, EventArgs e)
         {
-            productsBindingSource.Remove(productsListBox.SelectedItem);
+            if (productsListBox.SelectedValue != null)
+            {
+                currentSource.DeleteProduct(productsBindingSource, (int)productsListBox.SelectedValue);
+            }
         }
 
         private void BackToolStripButton_Click(object sender, EventArgs e)
@@ -116,6 +131,11 @@ namespace Data
             SetSource();
             BindCategories();
             BindProducts();
+        }
+
+        private void SaveToolStripButton_Click(object sender, EventArgs e)
+        {
+            currentSource.Save();
         }
     }
 }

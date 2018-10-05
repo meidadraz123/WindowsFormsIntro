@@ -17,8 +17,9 @@
         CategoryToolStripComboBox.ComboBox.ValueMember = "CategoryID"
         CategoryToolStripComboBox.ComboBox.DataSource = _categoriesBindingSource
 
-        ProductsListBox.DataSource = _productsBindingSource
         ProductsListBox.DisplayMember = "ProductName"
+        ProductsListBox.ValueMember = "ProductID"
+        ProductsListBox.DataSource = _productsBindingSource
         ProductsDataGridView.DataSource = _productsBindingSource
 
         NameTextBox.DataBindings.Add("Text", _productsBindingSource, "ProductName")
@@ -34,18 +35,20 @@
     End Sub
 
     Private Sub AddToolStripButton_Click(sender As Object, e As EventArgs) Handles AddToolStripButton.Click
-        Dim category = CType(CategoryToolStripComboBox.SelectedItem, Category)
+        Dim id = CategoryToolStripComboBox.ComboBox.SelectedValue
+        Dim name = CategoryToolStripComboBox.ComboBox.Text
+        Dim category = New Category(id, name)
         Dim form As New AddProductForm(category)
         Dim result = form.ShowDialog()
         If result = DialogResult.OK Then
-            _productsBindingSource.Add(form.Product)
+            _currentSource.AddProduct(_productsBindingSource, form.Product)
         End If
 
     End Sub
 
     Private Sub DeleteToolStripButton_Click(sender As Object, e As EventArgs) Handles DeleteToolStripButton.Click
-        Dim product = CType(ProductsListBox.SelectedItem, Product)
-        _productsBindingSource.Remove(product)
+        Dim productId = ProductsListBox.SelectedValue
+        _currentSource.DeleteProduct(_productsBindingSource, productId)
     End Sub
 
     Private Sub BackToolStripButton_Click(sender As Object, e As EventArgs) Handles BackToolStripButton.Click
@@ -84,5 +87,9 @@
                 End If
                 _currentSource = _dataSetSource
         End Select
+    End Sub
+
+    Private Sub SaveToolStripButton_Click(sender As Object, e As EventArgs) Handles SaveToolStripButton.Click
+        _currentSource.Save()
     End Sub
 End Class
