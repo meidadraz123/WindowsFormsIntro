@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2041
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "LinqDragDrop", "LinqDragDrop\LinqDragDrop.vbproj", "{51B18BF4-706B-4D92-BFD3-C9C1FA383E46}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{51B18BF4-706B-4D92-BFD3-C9C1FA383E46}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{51B18BF4-706B-4D92-BFD3-C9C1FA383E46}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{51B18BF4-706B-4D92-BFD3-C9C1FA383E46}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{51B18BF4-706B-4D92-BFD3-C9C1FA383E46}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3DB66C54-DDCF-48C7-8419-28650DDEFD1A}
+	EndGlobalSection
+EndGlobal
