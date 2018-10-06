@@ -30,6 +30,13 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.Windows.Forms.Label categoryIDLabel;
+            System.Windows.Forms.Label discontinuedLabel;
+            System.Windows.Forms.Label productNameLabel;
+            System.Windows.Forms.Label quantityPerUnitLabel;
+            System.Windows.Forms.Label unitPriceLabel;
+            System.Windows.Forms.Label unitsInStockLabel;
+            System.Windows.Forms.Label unitsOnOrderLabel;
             this.productBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
@@ -43,22 +50,23 @@
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.productBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
-            this.productDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.productBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.categoryIDLabel1 = new System.Windows.Forms.Label();
+            this.discontinuedCheckBox = new System.Windows.Forms.CheckBox();
+            this.productNameTextBox = new System.Windows.Forms.TextBox();
+            this.quantityPerUnitTextBox = new System.Windows.Forms.TextBox();
+            this.unitPriceTextBox = new System.Windows.Forms.TextBox();
+            this.unitsInStockTextBox = new System.Windows.Forms.TextBox();
+            this.unitsOnOrderTextBox = new System.Windows.Forms.TextBox();
+            categoryIDLabel = new System.Windows.Forms.Label();
+            discontinuedLabel = new System.Windows.Forms.Label();
+            productNameLabel = new System.Windows.Forms.Label();
+            quantityPerUnitLabel = new System.Windows.Forms.Label();
+            unitPriceLabel = new System.Windows.Forms.Label();
+            unitsInStockLabel = new System.Windows.Forms.Label();
+            unitsOnOrderLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingNavigator)).BeginInit();
             this.productBindingNavigator.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.productDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -186,105 +194,150 @@
             this.productBindingNavigatorSaveItem.Text = "Save Data";
             this.productBindingNavigatorSaveItem.Click += new System.EventHandler(this.productBindingNavigatorSaveItem_Click);
             // 
-            // productDataGridView
-            // 
-            this.productDataGridView.AutoGenerateColumns = false;
-            this.productDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.productDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4,
-            this.dataGridViewTextBoxColumn5,
-            this.dataGridViewTextBoxColumn6,
-            this.dataGridViewTextBoxColumn7,
-            this.dataGridViewTextBoxColumn8,
-            this.dataGridViewTextBoxColumn9,
-            this.dataGridViewCheckBoxColumn1,
-            this.dataGridViewTextBoxColumn10});
-            this.productDataGridView.DataSource = this.productBindingSource;
-            this.productDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.productDataGridView.Location = new System.Drawing.Point(0, 25);
-            this.productDataGridView.Name = "productDataGridView";
-            this.productDataGridView.Size = new System.Drawing.Size(1144, 495);
-            this.productDataGridView.TabIndex = 1;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "ProductID";
-            this.dataGridViewTextBoxColumn1.HeaderText = "ProductID";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "ProductName";
-            this.dataGridViewTextBoxColumn2.HeaderText = "ProductName";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "SupplierID";
-            this.dataGridViewTextBoxColumn3.HeaderText = "SupplierID";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "CategoryID";
-            this.dataGridViewTextBoxColumn4.HeaderText = "CategoryID";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "QuantityPerUnit";
-            this.dataGridViewTextBoxColumn5.HeaderText = "QuantityPerUnit";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "UnitPrice";
-            this.dataGridViewTextBoxColumn6.HeaderText = "UnitPrice";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "UnitsInStock";
-            this.dataGridViewTextBoxColumn7.HeaderText = "UnitsInStock";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            // 
-            // dataGridViewTextBoxColumn8
-            // 
-            this.dataGridViewTextBoxColumn8.DataPropertyName = "UnitsOnOrder";
-            this.dataGridViewTextBoxColumn8.HeaderText = "UnitsOnOrder";
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            // 
-            // dataGridViewTextBoxColumn9
-            // 
-            this.dataGridViewTextBoxColumn9.DataPropertyName = "ReorderLevel";
-            this.dataGridViewTextBoxColumn9.HeaderText = "ReorderLevel";
-            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
-            // 
-            // dataGridViewCheckBoxColumn1
-            // 
-            this.dataGridViewCheckBoxColumn1.DataPropertyName = "Discontinued";
-            this.dataGridViewCheckBoxColumn1.HeaderText = "Discontinued";
-            this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
-            // 
-            // dataGridViewTextBoxColumn10
-            // 
-            this.dataGridViewTextBoxColumn10.DataPropertyName = "Category";
-            this.dataGridViewTextBoxColumn10.HeaderText = "Category";
-            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
-            // 
             // productBindingSource
             // 
             this.productBindingSource.DataSource = typeof(LinqDragDrop.Product);
+            // 
+            // categoryIDLabel
+            // 
+            categoryIDLabel.AutoSize = true;
+            categoryIDLabel.Location = new System.Drawing.Point(12, 45);
+            categoryIDLabel.Name = "categoryIDLabel";
+            categoryIDLabel.Size = new System.Drawing.Size(66, 13);
+            categoryIDLabel.TabIndex = 1;
+            categoryIDLabel.Text = "Category ID:";
+            // 
+            // categoryIDLabel1
+            // 
+            this.categoryIDLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productBindingSource, "CategoryID", true));
+            this.categoryIDLabel1.Location = new System.Drawing.Point(108, 45);
+            this.categoryIDLabel1.Name = "categoryIDLabel1";
+            this.categoryIDLabel1.Size = new System.Drawing.Size(104, 23);
+            this.categoryIDLabel1.TabIndex = 2;
+            this.categoryIDLabel1.Text = "label1";
+            // 
+            // discontinuedLabel
+            // 
+            discontinuedLabel.AutoSize = true;
+            discontinuedLabel.Location = new System.Drawing.Point(12, 76);
+            discontinuedLabel.Name = "discontinuedLabel";
+            discontinuedLabel.Size = new System.Drawing.Size(72, 13);
+            discontinuedLabel.TabIndex = 3;
+            discontinuedLabel.Text = "Discontinued:";
+            // 
+            // discontinuedCheckBox
+            // 
+            this.discontinuedCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.productBindingSource, "Discontinued", true));
+            this.discontinuedCheckBox.Location = new System.Drawing.Point(108, 71);
+            this.discontinuedCheckBox.Name = "discontinuedCheckBox";
+            this.discontinuedCheckBox.Size = new System.Drawing.Size(104, 24);
+            this.discontinuedCheckBox.TabIndex = 4;
+            this.discontinuedCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // productNameLabel
+            // 
+            productNameLabel.AutoSize = true;
+            productNameLabel.Location = new System.Drawing.Point(12, 104);
+            productNameLabel.Name = "productNameLabel";
+            productNameLabel.Size = new System.Drawing.Size(78, 13);
+            productNameLabel.TabIndex = 5;
+            productNameLabel.Text = "Product Name:";
+            // 
+            // productNameTextBox
+            // 
+            this.productNameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productBindingSource, "ProductName", true));
+            this.productNameTextBox.Location = new System.Drawing.Point(108, 101);
+            this.productNameTextBox.Name = "productNameTextBox";
+            this.productNameTextBox.Size = new System.Drawing.Size(104, 20);
+            this.productNameTextBox.TabIndex = 6;
+            // 
+            // quantityPerUnitLabel
+            // 
+            quantityPerUnitLabel.AutoSize = true;
+            quantityPerUnitLabel.Location = new System.Drawing.Point(12, 130);
+            quantityPerUnitLabel.Name = "quantityPerUnitLabel";
+            quantityPerUnitLabel.Size = new System.Drawing.Size(90, 13);
+            quantityPerUnitLabel.TabIndex = 7;
+            quantityPerUnitLabel.Text = "Quantity Per Unit:";
+            // 
+            // quantityPerUnitTextBox
+            // 
+            this.quantityPerUnitTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productBindingSource, "QuantityPerUnit", true));
+            this.quantityPerUnitTextBox.Location = new System.Drawing.Point(108, 127);
+            this.quantityPerUnitTextBox.Name = "quantityPerUnitTextBox";
+            this.quantityPerUnitTextBox.Size = new System.Drawing.Size(104, 20);
+            this.quantityPerUnitTextBox.TabIndex = 8;
+            // 
+            // unitPriceLabel
+            // 
+            unitPriceLabel.AutoSize = true;
+            unitPriceLabel.Location = new System.Drawing.Point(12, 156);
+            unitPriceLabel.Name = "unitPriceLabel";
+            unitPriceLabel.Size = new System.Drawing.Size(56, 13);
+            unitPriceLabel.TabIndex = 9;
+            unitPriceLabel.Text = "Unit Price:";
+            // 
+            // unitPriceTextBox
+            // 
+            this.unitPriceTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productBindingSource, "UnitPrice", true));
+            this.unitPriceTextBox.Location = new System.Drawing.Point(108, 153);
+            this.unitPriceTextBox.Name = "unitPriceTextBox";
+            this.unitPriceTextBox.Size = new System.Drawing.Size(104, 20);
+            this.unitPriceTextBox.TabIndex = 10;
+            // 
+            // unitsInStockLabel
+            // 
+            unitsInStockLabel.AutoSize = true;
+            unitsInStockLabel.Location = new System.Drawing.Point(12, 182);
+            unitsInStockLabel.Name = "unitsInStockLabel";
+            unitsInStockLabel.Size = new System.Drawing.Size(77, 13);
+            unitsInStockLabel.TabIndex = 11;
+            unitsInStockLabel.Text = "Units In Stock:";
+            // 
+            // unitsInStockTextBox
+            // 
+            this.unitsInStockTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productBindingSource, "UnitsInStock", true));
+            this.unitsInStockTextBox.Location = new System.Drawing.Point(108, 179);
+            this.unitsInStockTextBox.Name = "unitsInStockTextBox";
+            this.unitsInStockTextBox.Size = new System.Drawing.Size(104, 20);
+            this.unitsInStockTextBox.TabIndex = 12;
+            // 
+            // unitsOnOrderLabel
+            // 
+            unitsOnOrderLabel.AutoSize = true;
+            unitsOnOrderLabel.Location = new System.Drawing.Point(12, 208);
+            unitsOnOrderLabel.Name = "unitsOnOrderLabel";
+            unitsOnOrderLabel.Size = new System.Drawing.Size(80, 13);
+            unitsOnOrderLabel.TabIndex = 13;
+            unitsOnOrderLabel.Text = "Units On Order:";
+            // 
+            // unitsOnOrderTextBox
+            // 
+            this.unitsOnOrderTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productBindingSource, "UnitsOnOrder", true));
+            this.unitsOnOrderTextBox.Location = new System.Drawing.Point(108, 205);
+            this.unitsOnOrderTextBox.Name = "unitsOnOrderTextBox";
+            this.unitsOnOrderTextBox.Size = new System.Drawing.Size(104, 20);
+            this.unitsOnOrderTextBox.TabIndex = 14;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1144, 520);
-            this.Controls.Add(this.productDataGridView);
+            this.Controls.Add(categoryIDLabel);
+            this.Controls.Add(this.categoryIDLabel1);
+            this.Controls.Add(discontinuedLabel);
+            this.Controls.Add(this.discontinuedCheckBox);
+            this.Controls.Add(productNameLabel);
+            this.Controls.Add(this.productNameTextBox);
+            this.Controls.Add(quantityPerUnitLabel);
+            this.Controls.Add(this.quantityPerUnitTextBox);
+            this.Controls.Add(unitPriceLabel);
+            this.Controls.Add(this.unitPriceTextBox);
+            this.Controls.Add(unitsInStockLabel);
+            this.Controls.Add(this.unitsInStockTextBox);
+            this.Controls.Add(unitsOnOrderLabel);
+            this.Controls.Add(this.unitsOnOrderTextBox);
             this.Controls.Add(this.productBindingNavigator);
             this.Name = "Form1";
             this.Text = "Form1";
@@ -292,7 +345,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.productBindingNavigator)).EndInit();
             this.productBindingNavigator.ResumeLayout(false);
             this.productBindingNavigator.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.productDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -315,18 +367,13 @@
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
         private System.Windows.Forms.ToolStripButton productBindingNavigatorSaveItem;
-        private System.Windows.Forms.DataGridView productDataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
+        private System.Windows.Forms.Label categoryIDLabel1;
+        private System.Windows.Forms.CheckBox discontinuedCheckBox;
+        private System.Windows.Forms.TextBox productNameTextBox;
+        private System.Windows.Forms.TextBox quantityPerUnitTextBox;
+        private System.Windows.Forms.TextBox unitPriceTextBox;
+        private System.Windows.Forms.TextBox unitsInStockTextBox;
+        private System.Windows.Forms.TextBox unitsOnOrderTextBox;
     }
 }
 

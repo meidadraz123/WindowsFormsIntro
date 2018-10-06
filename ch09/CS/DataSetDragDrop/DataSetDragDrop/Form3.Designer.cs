@@ -1,6 +1,6 @@
 ﻿namespace DataSetDragDrop
 {
-    partial class Form1
+    partial class Form3
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form3));
             System.Windows.Forms.Label productNameLabel;
             System.Windows.Forms.Label categoryIDLabel;
             System.Windows.Forms.Label quantityPerUnitLabel;
@@ -38,10 +38,10 @@
             System.Windows.Forms.Label unitsOnOrderLabel;
             System.Windows.Forms.Label discontinuedLabel;
             this.northwindDataSet = new DataSetDragDrop.NorthwindDataSet();
-            this.productsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.productsTableAdapter = new DataSetDragDrop.NorthwindDataSetTableAdapters.ProductsTableAdapter();
+            this.categoriesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.categoriesTableAdapter = new DataSetDragDrop.NorthwindDataSetTableAdapters.CategoriesTableAdapter();
             this.tableAdapterManager = new DataSetDragDrop.NorthwindDataSetTableAdapters.TableAdapterManager();
-            this.productsBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
+            this.categoriesBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
@@ -53,7 +53,11 @@
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
-            this.productsBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
+            this.categoriesBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
+            this.productsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.productsTableAdapter = new DataSetDragDrop.NorthwindDataSetTableAdapters.ProductsTableAdapter();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.listBox1 = new System.Windows.Forms.ListBox();
             this.productNameTextBox = new System.Windows.Forms.TextBox();
             this.categoryIDLabel1 = new System.Windows.Forms.Label();
             this.quantityPerUnitTextBox = new System.Windows.Forms.TextBox();
@@ -69,9 +73,10 @@
             unitsOnOrderLabel = new System.Windows.Forms.Label();
             discontinuedLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.northwindDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.categoriesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.categoriesBindingNavigator)).BeginInit();
+            this.categoriesBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productsBindingNavigator)).BeginInit();
-            this.productsBindingNavigator.SuspendLayout();
             this.SuspendLayout();
             // 
             // northwindDataSet
@@ -79,29 +84,29 @@
             this.northwindDataSet.DataSetName = "NorthwindDataSet";
             this.northwindDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // productsBindingSource
+            // categoriesBindingSource
             // 
-            this.productsBindingSource.DataMember = "Products";
-            this.productsBindingSource.DataSource = this.northwindDataSet;
+            this.categoriesBindingSource.DataMember = "Categories";
+            this.categoriesBindingSource.DataSource = this.northwindDataSet;
             // 
-            // productsTableAdapter
+            // categoriesTableAdapter
             // 
-            this.productsTableAdapter.ClearBeforeFill = true;
+            this.categoriesTableAdapter.ClearBeforeFill = true;
             // 
             // tableAdapterManager
             // 
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.CategoriesTableAdapter = null;
+            this.tableAdapterManager.CategoriesTableAdapter = this.categoriesTableAdapter;
             this.tableAdapterManager.ProductsTableAdapter = this.productsTableAdapter;
             this.tableAdapterManager.UpdateOrder = DataSetDragDrop.NorthwindDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
-            // productsBindingNavigator
+            // categoriesBindingNavigator
             // 
-            this.productsBindingNavigator.AddNewItem = this.bindingNavigatorAddNewItem;
-            this.productsBindingNavigator.BindingSource = this.productsBindingSource;
-            this.productsBindingNavigator.CountItem = this.bindingNavigatorCountItem;
-            this.productsBindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
-            this.productsBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.categoriesBindingNavigator.AddNewItem = this.bindingNavigatorAddNewItem;
+            this.categoriesBindingNavigator.BindingSource = this.categoriesBindingSource;
+            this.categoriesBindingNavigator.CountItem = this.bindingNavigatorCountItem;
+            this.categoriesBindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
+            this.categoriesBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.bindingNavigatorMoveFirstItem,
             this.bindingNavigatorMovePreviousItem,
             this.bindingNavigatorSeparator,
@@ -113,17 +118,17 @@
             this.bindingNavigatorSeparator2,
             this.bindingNavigatorAddNewItem,
             this.bindingNavigatorDeleteItem,
-            this.productsBindingNavigatorSaveItem});
-            this.productsBindingNavigator.Location = new System.Drawing.Point(0, 0);
-            this.productsBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
-            this.productsBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
-            this.productsBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
-            this.productsBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
-            this.productsBindingNavigator.Name = "productsBindingNavigator";
-            this.productsBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.productsBindingNavigator.Size = new System.Drawing.Size(1044, 25);
-            this.productsBindingNavigator.TabIndex = 0;
-            this.productsBindingNavigator.Text = "bindingNavigator1";
+            this.categoriesBindingNavigatorSaveItem});
+            this.categoriesBindingNavigator.Location = new System.Drawing.Point(0, 0);
+            this.categoriesBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
+            this.categoriesBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
+            this.categoriesBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
+            this.categoriesBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
+            this.categoriesBindingNavigator.Name = "categoriesBindingNavigator";
+            this.categoriesBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
+            this.categoriesBindingNavigator.Size = new System.Drawing.Size(800, 25);
+            this.categoriesBindingNavigator.TabIndex = 0;
+            this.categoriesBindingNavigator.Text = "bindingNavigator1";
             // 
             // bindingNavigatorMoveFirstItem
             // 
@@ -210,142 +215,170 @@
             this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 20);
             this.bindingNavigatorDeleteItem.Text = "Delete";
             // 
-            // productsBindingNavigatorSaveItem
+            // categoriesBindingNavigatorSaveItem
             // 
-            this.productsBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.productsBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("productsBindingNavigatorSaveItem.Image")));
-            this.productsBindingNavigatorSaveItem.Name = "productsBindingNavigatorSaveItem";
-            this.productsBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 23);
-            this.productsBindingNavigatorSaveItem.Text = "Save Data";
-            this.productsBindingNavigatorSaveItem.Click += new System.EventHandler(this.productsBindingNavigatorSaveItem_Click);
+            this.categoriesBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.categoriesBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("categoriesBindingNavigatorSaveItem.Image")));
+            this.categoriesBindingNavigatorSaveItem.Name = "categoriesBindingNavigatorSaveItem";
+            this.categoriesBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 23);
+            this.categoriesBindingNavigatorSaveItem.Text = "Save Data";
+            this.categoriesBindingNavigatorSaveItem.Click += new System.EventHandler(this.categoriesBindingNavigatorSaveItem_Click_2);
+            // 
+            // productsBindingSource
+            // 
+            this.productsBindingSource.DataMember = "FK_Products_Categories";
+            this.productsBindingSource.DataSource = this.categoriesBindingSource;
+            // 
+            // productsTableAdapter
+            // 
+            this.productsTableAdapter.ClearBeforeFill = true;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.DataSource = this.categoriesBindingSource;
+            this.comboBox1.DisplayMember = "CategoryName";
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(13, 29);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(339, 21);
+            this.comboBox1.TabIndex = 1;
+            // 
+            // listBox1
+            // 
+            this.listBox1.DataSource = this.productsBindingSource;
+            this.listBox1.DisplayMember = "ProductName";
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.Location = new System.Drawing.Point(13, 57);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(339, 407);
+            this.listBox1.TabIndex = 2;
             // 
             // productNameLabel
             // 
             productNameLabel.AutoSize = true;
-            productNameLabel.Location = new System.Drawing.Point(21, 36);
+            productNameLabel.Location = new System.Drawing.Point(385, 57);
             productNameLabel.Name = "productNameLabel";
             productNameLabel.Size = new System.Drawing.Size(78, 13);
-            productNameLabel.TabIndex = 1;
+            productNameLabel.TabIndex = 3;
             productNameLabel.Text = "Product Name:";
             // 
             // productNameTextBox
             // 
             this.productNameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productsBindingSource, "ProductName", true));
-            this.productNameTextBox.Location = new System.Drawing.Point(117, 33);
+            this.productNameTextBox.Location = new System.Drawing.Point(481, 54);
             this.productNameTextBox.Name = "productNameTextBox";
-            this.productNameTextBox.ReadOnly = true;
-            this.productNameTextBox.Size = new System.Drawing.Size(276, 20);
-            this.productNameTextBox.TabIndex = 2;
+            this.productNameTextBox.Size = new System.Drawing.Size(104, 20);
+            this.productNameTextBox.TabIndex = 4;
             // 
             // categoryIDLabel
             // 
             categoryIDLabel.AutoSize = true;
-            categoryIDLabel.Location = new System.Drawing.Point(21, 56);
+            categoryIDLabel.Location = new System.Drawing.Point(385, 77);
             categoryIDLabel.Name = "categoryIDLabel";
             categoryIDLabel.Size = new System.Drawing.Size(66, 13);
-            categoryIDLabel.TabIndex = 3;
+            categoryIDLabel.TabIndex = 5;
             categoryIDLabel.Text = "Category ID:";
             // 
             // categoryIDLabel1
             // 
             this.categoryIDLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productsBindingSource, "CategoryID", true));
-            this.categoryIDLabel1.Location = new System.Drawing.Point(117, 56);
+            this.categoryIDLabel1.Location = new System.Drawing.Point(481, 77);
             this.categoryIDLabel1.Name = "categoryIDLabel1";
             this.categoryIDLabel1.Size = new System.Drawing.Size(104, 23);
-            this.categoryIDLabel1.TabIndex = 4;
+            this.categoryIDLabel1.TabIndex = 6;
             this.categoryIDLabel1.Text = "label1";
             // 
             // quantityPerUnitLabel
             // 
             quantityPerUnitLabel.AutoSize = true;
-            quantityPerUnitLabel.Location = new System.Drawing.Point(21, 85);
+            quantityPerUnitLabel.Location = new System.Drawing.Point(385, 106);
             quantityPerUnitLabel.Name = "quantityPerUnitLabel";
             quantityPerUnitLabel.Size = new System.Drawing.Size(90, 13);
-            quantityPerUnitLabel.TabIndex = 5;
+            quantityPerUnitLabel.TabIndex = 7;
             quantityPerUnitLabel.Text = "Quantity Per Unit:";
             // 
             // quantityPerUnitTextBox
             // 
             this.quantityPerUnitTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productsBindingSource, "QuantityPerUnit", true));
-            this.quantityPerUnitTextBox.Location = new System.Drawing.Point(117, 82);
+            this.quantityPerUnitTextBox.Location = new System.Drawing.Point(481, 103);
             this.quantityPerUnitTextBox.Name = "quantityPerUnitTextBox";
             this.quantityPerUnitTextBox.Size = new System.Drawing.Size(104, 20);
-            this.quantityPerUnitTextBox.TabIndex = 6;
+            this.quantityPerUnitTextBox.TabIndex = 8;
             // 
             // unitPriceLabel
             // 
             unitPriceLabel.AutoSize = true;
-            unitPriceLabel.Location = new System.Drawing.Point(21, 111);
+            unitPriceLabel.Location = new System.Drawing.Point(385, 132);
             unitPriceLabel.Name = "unitPriceLabel";
             unitPriceLabel.Size = new System.Drawing.Size(56, 13);
-            unitPriceLabel.TabIndex = 7;
+            unitPriceLabel.TabIndex = 9;
             unitPriceLabel.Text = "Unit Price:";
             // 
             // unitPriceTextBox
             // 
             this.unitPriceTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productsBindingSource, "UnitPrice", true));
-            this.unitPriceTextBox.Location = new System.Drawing.Point(117, 108);
+            this.unitPriceTextBox.Location = new System.Drawing.Point(481, 129);
             this.unitPriceTextBox.Name = "unitPriceTextBox";
             this.unitPriceTextBox.Size = new System.Drawing.Size(104, 20);
-            this.unitPriceTextBox.TabIndex = 8;
+            this.unitPriceTextBox.TabIndex = 10;
             // 
             // unitsInStockLabel
             // 
             unitsInStockLabel.AutoSize = true;
-            unitsInStockLabel.Location = new System.Drawing.Point(21, 137);
+            unitsInStockLabel.Location = new System.Drawing.Point(385, 158);
             unitsInStockLabel.Name = "unitsInStockLabel";
             unitsInStockLabel.Size = new System.Drawing.Size(77, 13);
-            unitsInStockLabel.TabIndex = 9;
+            unitsInStockLabel.TabIndex = 11;
             unitsInStockLabel.Text = "Units In Stock:";
             // 
             // unitsInStockTextBox
             // 
             this.unitsInStockTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productsBindingSource, "UnitsInStock", true));
-            this.unitsInStockTextBox.Location = new System.Drawing.Point(117, 134);
+            this.unitsInStockTextBox.Location = new System.Drawing.Point(481, 155);
             this.unitsInStockTextBox.Name = "unitsInStockTextBox";
             this.unitsInStockTextBox.Size = new System.Drawing.Size(104, 20);
-            this.unitsInStockTextBox.TabIndex = 10;
+            this.unitsInStockTextBox.TabIndex = 12;
             // 
             // unitsOnOrderLabel
             // 
             unitsOnOrderLabel.AutoSize = true;
-            unitsOnOrderLabel.Location = new System.Drawing.Point(21, 163);
+            unitsOnOrderLabel.Location = new System.Drawing.Point(385, 184);
             unitsOnOrderLabel.Name = "unitsOnOrderLabel";
             unitsOnOrderLabel.Size = new System.Drawing.Size(80, 13);
-            unitsOnOrderLabel.TabIndex = 11;
+            unitsOnOrderLabel.TabIndex = 13;
             unitsOnOrderLabel.Text = "Units On Order:";
             // 
             // unitsOnOrderTextBox
             // 
             this.unitsOnOrderTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productsBindingSource, "UnitsOnOrder", true));
-            this.unitsOnOrderTextBox.Location = new System.Drawing.Point(117, 160);
+            this.unitsOnOrderTextBox.Location = new System.Drawing.Point(481, 181);
             this.unitsOnOrderTextBox.Name = "unitsOnOrderTextBox";
             this.unitsOnOrderTextBox.Size = new System.Drawing.Size(104, 20);
-            this.unitsOnOrderTextBox.TabIndex = 12;
+            this.unitsOnOrderTextBox.TabIndex = 14;
             // 
             // discontinuedLabel
             // 
             discontinuedLabel.AutoSize = true;
-            discontinuedLabel.Location = new System.Drawing.Point(21, 191);
+            discontinuedLabel.Location = new System.Drawing.Point(385, 212);
             discontinuedLabel.Name = "discontinuedLabel";
             discontinuedLabel.Size = new System.Drawing.Size(72, 13);
-            discontinuedLabel.TabIndex = 13;
+            discontinuedLabel.TabIndex = 15;
             discontinuedLabel.Text = "Discontinued:";
             // 
             // discontinuedCheckBox
             // 
             this.discontinuedCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.productsBindingSource, "Discontinued", true));
-            this.discontinuedCheckBox.Location = new System.Drawing.Point(117, 186);
+            this.discontinuedCheckBox.Location = new System.Drawing.Point(481, 207);
             this.discontinuedCheckBox.Name = "discontinuedCheckBox";
             this.discontinuedCheckBox.Size = new System.Drawing.Size(104, 24);
-            this.discontinuedCheckBox.TabIndex = 14;
+            this.discontinuedCheckBox.TabIndex = 16;
             this.discontinuedCheckBox.UseVisualStyleBackColor = true;
             // 
-            // Form1
+            // Form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1044, 479);
+            this.ClientSize = new System.Drawing.Size(800, 648);
             this.Controls.Add(productNameLabel);
             this.Controls.Add(this.productNameTextBox);
             this.Controls.Add(categoryIDLabel);
@@ -360,15 +393,18 @@
             this.Controls.Add(this.unitsOnOrderTextBox);
             this.Controls.Add(discontinuedLabel);
             this.Controls.Add(this.discontinuedCheckBox);
-            this.Controls.Add(this.productsBindingNavigator);
-            this.Name = "Form1";
-            this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.categoriesBindingNavigator);
+            this.Name = "Form3";
+            this.Text = "Form3";
+            this.Load += new System.EventHandler(this.Form3_Load);
             ((System.ComponentModel.ISupportInitialize)(this.northwindDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.categoriesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.categoriesBindingNavigator)).EndInit();
+            this.categoriesBindingNavigator.ResumeLayout(false);
+            this.categoriesBindingNavigator.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productsBindingNavigator)).EndInit();
-            this.productsBindingNavigator.ResumeLayout(false);
-            this.productsBindingNavigator.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -377,10 +413,10 @@
         #endregion
 
         private NorthwindDataSet northwindDataSet;
-        private System.Windows.Forms.BindingSource productsBindingSource;
-        private NorthwindDataSetTableAdapters.ProductsTableAdapter productsTableAdapter;
+        private System.Windows.Forms.BindingSource categoriesBindingSource;
+        private NorthwindDataSetTableAdapters.CategoriesTableAdapter categoriesTableAdapter;
         private NorthwindDataSetTableAdapters.TableAdapterManager tableAdapterManager;
-        private System.Windows.Forms.BindingNavigator productsBindingNavigator;
+        private System.Windows.Forms.BindingNavigator categoriesBindingNavigator;
         private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
         private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorDeleteItem;
@@ -392,7 +428,11 @@
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
-        private System.Windows.Forms.ToolStripButton productsBindingNavigatorSaveItem;
+        private System.Windows.Forms.ToolStripButton categoriesBindingNavigatorSaveItem;
+        private NorthwindDataSetTableAdapters.ProductsTableAdapter productsTableAdapter;
+        private System.Windows.Forms.BindingSource productsBindingSource;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.TextBox productNameTextBox;
         private System.Windows.Forms.Label categoryIDLabel1;
         private System.Windows.Forms.TextBox quantityPerUnitTextBox;
@@ -402,4 +442,3 @@
         private System.Windows.Forms.CheckBox discontinuedCheckBox;
     }
 }
-

@@ -12,4 +12,5 @@
         Me.ProductBindingSource.EndEdit()
         _context.SubmitChanges()
     End Sub
+
 End Class
