@@ -14,7 +14,7 @@ namespace Data
             object categories = null;
             using (var context = new NorthwindDataContext())
             {
-                categories = context.LinqCategories;
+                categories = context.LinqCategories.ToList();
             }
             return categories;
         }
